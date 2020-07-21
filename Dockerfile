@@ -15,7 +15,7 @@ RUN apk --update add --no-cache --virtual .build-deps build-base
 RUN apk add --no-cache bash
 
 # Install dependencies required for building the pip packages below
-RUN apk add --update --no-cache gcc libc-dev linux-headers jpeg-dev zlib-dev freetype-dev bash
+RUN apk add --update --no-cache gcc libc-dev linux-headers jpeg-dev zlib-dev freetype-dev bash postgresql-dev
 
 RUN pip3 install --no-cache-dir -r /requirements/numpy.txt && \
     apk del .build-deps
